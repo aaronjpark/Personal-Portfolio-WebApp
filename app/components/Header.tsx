@@ -29,29 +29,27 @@ export default function Header() {
 
   return (
     <motion.header
-      className="sticky top-0 z-50 bg-background/80 backdrop-blur-md"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
+      className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-background/10 backdrop-blur-lg shadow-xl rounded-full border border-border/30"
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
     >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-center p-6 lg:px-8 relative"
+        className="flex items-center justify-center px-8 py-3 gap-x-6"
         aria-label="Global"
       >
-        <div className="flex gap-x-12">
-          {navItems.map((item) => (
-            <button
-              key={item.name}
-              onClick={() => handleScroll(item.targetId)}
-              className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
-            >
-              {item.name}
-            </button>
-          ))}
-        </div>
+        {navItems.map((item) => (
+          <button
+            key={item.name}
+            onClick={() => handleScroll(item.targetId)}
+            className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
+          >
+            {item.name}
+          </button>
+        ))}
 
         {mounted && (
-          <div className="absolute right-6">
+          <div className="ml-4">
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="rounded-full p-2 bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
