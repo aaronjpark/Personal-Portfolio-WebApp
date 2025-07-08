@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
         {/* Large heading */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mt-4 mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -32,9 +32,9 @@ export default function Hero() {
               <Image
                 src="/assets/images/headshot.JPG"
                 alt="Aaron Park's Headshot"
-                width={400}
-                height={400}
-                className="w-80 h-80 object-cover shadow-xl ring-4 ring-gray-100"
+                width={310} // narrower
+                height={360} // taller
+                className="w-60 h-72 object-cover shadow-xl ring-4 ring-gray-100"
                 style={{
                   borderRadius: "50% 50% 20px 20px",
                 }}
