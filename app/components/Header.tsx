@@ -28,16 +28,13 @@ export default function Header() {
   };
 
   return (
-    <motion.header
-      className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-background/10 backdrop-blur-lg shadow-xl rounded-full border border-border/30"
+    <motion.div
+      className="fixed top-4 left-0 right-0 flex justify-center z-50"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <nav
-        className="flex items-center justify-center px-8 py-3 gap-x-6"
-        aria-label="Global"
-      >
+      <div className="flex items-center justify-center gap-x-6 px-8 py-3 bg-background/70 backdrop-blur-lg shadow-xl rounded-full border border-border/30">
         {navItems.map((item) => (
           <button
             key={item.name}
@@ -62,7 +59,7 @@ export default function Header() {
             </button>
           </div>
         )}
-      </nav>
-    </motion.header>
+      </div>
+    </motion.div>
   );
 }
