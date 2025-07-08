@@ -5,8 +5,8 @@ import { motion, useScroll, useTransform, useSpring, useInView } from "framer-mo
 
 const timelineEvents = [
   {
-    year: 2018,
-    title: "Flowers & Saints Founded",
+    year: "May 2025 - Present",
+    title: "The Trade Desk Inc.",
     description: "Our journey began with a passion for minimal design and floral artistry.",
     details:
       "Founded by Jane Doe and John Smith, Flowers & Saints started as a small studio in Sydney's Surry Hills, combining their love for minimalist design and botanical beauty.",
@@ -92,7 +92,7 @@ export default function Timeline() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Our Journey</h2>
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">My Journey</h2>
           <p className="mt-4 text-lg text-muted-foreground">The evolution of Flowers & Saints through the years</p>
         </motion.div>
 

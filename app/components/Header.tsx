@@ -1,8 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
@@ -10,18 +8,24 @@ import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 export default function Header() {
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
-  const pathname = usePathname();
 
   useEffect(() => setMounted(true), []);
 
-  // Nav items and their paths
   const navItems = [
-    { name: "AP", path: "/" },
-    { name: "Expertise", path: "/expertise" },
-    { name: "Projects", path: "/projects" },
-    { name: "Experiences", path: "/experiences" },
-    { name: "Contact", path: "/contact" },
+    { name: "AP", targetId: "hero" },
+    { name: "Story", targetId: "story" },
+    { name: "Expertise", targetId: "features" },
+    { name: "Projects", targetId: "projects" },
+    { name: "Experiences", targetId: "experiences" },
+    { name: "Contact", targetId: "contact" },
   ];
+
+  const handleScroll = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <motion.header
@@ -35,22 +39,15 @@ export default function Header() {
         aria-label="Global"
       >
         <div className="flex gap-x-12">
-          {navItems.map((item) => {
-            const isActive = pathname === item.path;
-            return (
-              <Link
-                key={item.name}
-                href={item.path}
-                className={`text-sm font-semibold leading-6 transition-colors ${
-                  isActive
-                    ? "text-primary underline underline-offset-4"
-                    : "text-foreground hover:text-primary"
-                }`}
-              >
-                {item.name}
-              </Link>
-            );
-          })}
+          {navItems.map((item) => (
+            <button
+              key={item.name}
+              onClick={() => handleScroll(item.targetId)}
+              className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
+            >
+              {item.name}
+            </button>
+          ))}
         </div>
 
         {mounted && (

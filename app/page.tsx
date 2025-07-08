@@ -10,14 +10,30 @@ import NewsletterSubscribe from "./components/NewsletterSubscribe"
 export default function Home() {
   return (
     <>
-      <Hero />
-      <WearYourStory />
-      <FeatureCarousel />
-      <PortfolioGrid />
-      <Timeline />
-      <Marquee />
-      <ContactForm />
-      <NewsletterSubscribe />
+      <section id="hero">
+        <Hero />
+      </section>
+      <section id="story">
+        <WearYourStory />
+      </section>
+      <section id="features">
+        <FeatureCarousel />
+      </section>
+      <section id="projects">
+        <PortfolioGrid />
+      </section>
+      <section id="experiences">
+        <Timeline />
+      </section>
+      <section id="marquee">
+        <Marquee />
+      </section>
+      <section id="contact">
+        <ContactForm />
+      </section>
+      <section id="newsletter">
+        <NewsletterSubscribe />
+      </section>
     </>
-  )
+  );
 }

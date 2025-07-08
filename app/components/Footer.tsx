@@ -24,8 +24,8 @@ export default function Footer() {
           )}
         </nav>
         <p className="mt-10 text-center text-sm leading-5 text-muted-foreground">
-          Designed & Developed with 💻☕️❤️ by Aaron Park.<br /> © 2025 Aaron J Park •
-          Colophon
+          Designed & Developed with 💻❤️☕️ by Aaron Park.
+          <br /> © 2025 Aaron J Park • Colophon
         </p>
       </div>
     </footer>

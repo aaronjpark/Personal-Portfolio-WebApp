@@ -43,9 +43,11 @@ export default function NewsletterSubscribe() {
           transition={{ duration: 0.8 }}
           className="bg-gradient-to-br from-primary/10 to-secondary/10 rounded-3xl p-8 shadow-lg"
         >
-          <h2 className="text-2xl font-bold text-foreground mb-4 text-center">Stay Inspired</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-4 text-center">
+            Stay Inspired
+          </h2>
           <p className="text-muted-foreground mb-6 text-center">
-            Subscribe to our newsletter for the latest updates on minimal design and floral artistry.
+            Monthly digest of what's new and exciting from me!
           </p>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -55,13 +57,21 @@ export default function NewsletterSubscribe() {
                 render={({ field }) => (
                   <FormItem>
                     <FormControl>
-                      <Input placeholder="Enter your email" {...field} className="rounded-full" />
+                      <Input
+                        placeholder="Enter your email"
+                        {...field}
+                        className="rounded-full"
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full rounded-full" disabled={isSubmitting}>
+              <Button
+                type="submit"
+                className="w-full rounded-full"
+                disabled={isSubmitting}
+              >
                 {isSubmitting ? "Subscribing..." : "Subscribe"}
               </Button>
             </form>
@@ -69,5 +79,5 @@ export default function NewsletterSubscribe() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

@@ -65,9 +65,11 @@ export default function PortfolioGrid() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Our Work</h2>
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
+            My Work
+          </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            A showcase of our minimalist designs and creative solutions.
+            A curated selection of minimal aesthetics and smart solutions.
           </p>
         </motion.div>
 
@@ -87,7 +89,10 @@ export default function PortfolioGrid() {
           ))}
         </div>
 
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
           <AnimatePresence>
             {filteredProjects.map((project) => (
               <motion.div
@@ -111,12 +116,18 @@ export default function PortfolioGrid() {
                     className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300"
                     whileHover={{ opacity: 1 }}
                   >
-                    <p className="text-white text-center px-4">{project.description}</p>
+                    <p className="text-white text-center px-4">
+                      {project.description}
+                    </p>
                   </motion.div>
                 </div>
                 <div className="p-6">
-                  <div className="text-sm font-medium text-primary mb-1">{project.category}</div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{project.title}</h3>
+                  <div className="text-sm font-medium text-primary mb-1">
+                    {project.category}
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground mb-2">
+                    {project.title}
+                  </h3>
                   <a
                     href="https://www.flowersandsaints.com.au"
                     target="_blank"
@@ -131,7 +142,12 @@ export default function PortfolioGrid() {
                       viewBox="0 0 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"
+                      />
                     </svg>
                   </a>
                 </div>
@@ -141,5 +157,5 @@ export default function PortfolioGrid() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
