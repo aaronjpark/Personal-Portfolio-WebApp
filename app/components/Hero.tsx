@@ -32,8 +32,8 @@ export default function Hero() {
               <Image
                 src="/assets/images/headshot.JPG"
                 alt="Aaron Park's Headshot"
-                width={310} // narrower
-                height={360} // taller
+                width={310}
+                height={360}
                 className="w-60 h-72 object-cover shadow-xl ring-4 ring-gray-100"
                 style={{
                   borderRadius: "50% 50% 20px 20px",
