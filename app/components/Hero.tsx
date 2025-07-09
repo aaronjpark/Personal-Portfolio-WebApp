@@ -21,7 +21,7 @@ export default function Hero() {
 
         {/* Content section with image and text */}
         <div className="lg:flex lg:items-center lg:gap-x-16">
-          {/* Profile Image */}
+          {/* Profile Image Section */}
           <motion.div
             className="flex-shrink-0 mb-12 lg:mb-0"
             initial={{ opacity: 0, x: -20 }}
